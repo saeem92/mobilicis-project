@@ -557,13 +557,13 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otR-d6-5UP" userLabel="SigninPrompt">
                                                     <rect key="frame" x="32.666666666666657" y="542" width="251.99999999999997" height="32"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Already have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoA-bO-AOC">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoA-bO-AOC">
                                                             <rect key="frame" x="0.0" y="0.0" width="179.66666666666666" height="32"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-Ta-bWG">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-Ta-bWG">
                                                             <rect key="frame" x="179.66666666666669" y="0.0" width="72.333333333333314" height="32"/>
                                                             <color key="tintColor" red="0.48627450979999998" green="0.7843137255" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <state key="normal" title="Button"/>
@@ -683,7 +683,7 @@
                                         <color key="tintColor" red="0.48627450979999998" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Click Here To Get Your Device Information" cornerStyle="capsule">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                             <color key="baseBackgroundColor" red="0.48627450979999998" green="0.7843137255" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -744,16 +744,35 @@
                                 <color key="textColor" red="0.48627450979999998" green="0.7843137255" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIs-DX-8Ox">
+                                <rect key="frame" x="119" y="666" width="167" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AHM-av-lTi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Device Info" cornerStyle="capsule">
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getdeviceInfo:" destination="IN8-lH-OCK" eventType="touchUpInside" id="WJb-pV-urM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hwQ-ir-0xL"/>
                         <color key="backgroundColor" red="0.75193967439999998" green="0.87912833109999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="hwQ-ir-0xL" firstAttribute="trailing" secondItem="Gdq-dq-Gz7" secondAttribute="trailing" constant="119" id="EiZ-40-7uN"/>
+                            <constraint firstItem="hwQ-ir-0xL" firstAttribute="trailing" secondItem="kIs-DX-8Ox" secondAttribute="trailing" constant="107" id="O1i-L8-r3x"/>
                             <constraint firstItem="Gdq-dq-Gz7" firstAttribute="leading" secondItem="hwQ-ir-0xL" secondAttribute="leading" constant="119" id="ZG2-iX-EIf"/>
+                            <constraint firstItem="kIs-DX-8Ox" firstAttribute="leading" secondItem="hwQ-ir-0xL" secondAttribute="leading" constant="119" id="ca4-l0-VqE"/>
                             <constraint firstItem="Gdq-dq-Gz7" firstAttribute="bottom" secondItem="hwQ-ir-0xL" secondAttribute="bottom" id="kEI-ro-51c"/>
+                            <constraint firstItem="Gdq-dq-Gz7" firstAttribute="top" secondItem="kIs-DX-8Ox" secondAttribute="bottom" constant="96" id="piC-D3-agV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Device Information" id="Vtb-Mw-ZDC"/>
+                    <connections>
+                        <outlet property="getdevice" destination="kIs-DX-8Ox" id="adT-KD-qVH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qhR-OP-zcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -814,6 +833,9 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

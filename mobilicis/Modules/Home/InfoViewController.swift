@@ -25,37 +25,34 @@ class InfoViewController: UIViewController {
     let processorLabel = UILabel()
     let gpuinformationLabel = UILabel()
   
-
+    @IBOutlet weak var getdevice: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
 
         navigationController?.isNavigationBarHidden = false
-        let button = UIButton(type: .system)
-        button.setTitle("Get Device Info", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-
-        view.addSubview(button)
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        
         
         setupLabels()
+        
     }
 
     @objc func buttonTapped() {
-        getDeviceInformation()
+        
     }
   
+    @IBAction func getdeviceInfo(_ sender: Any) {
+        getDeviceInformation()
+    }
     func getDeviceInformation() {
         
         let device = UIDevice.current
         let model = device.model
         let systemVersion = device.systemVersion
         let modelName = device.name
-
+        let batteryLevel = UIDevice.current.batteryLevel
+        let batteryPercentage = Int(batteryLevel * 100)
         let ctTelephonyInfo = CTTelephonyNetworkInfo()
         let carrier = ctTelephonyInfo.subscriberCellularProvider
         let carrierName = carrier?.carrierName
@@ -74,7 +71,7 @@ class InfoViewController: UIViewController {
         }
 
         let batteryHealth = device.batteryLevel * 100
-        let batteryLevel = device.batteryState
+//        let batteryLevel = device.batteryState
 
         let cameraInfo = AVCaptureDevice.default(for: .video)
 //        let cameraMegaPixel = (cameraInfo?.activeFormat.totalPixels)! / (1024 * 1024)
@@ -89,7 +86,7 @@ class InfoViewController: UIViewController {
         print("Carrier Name: \(String(describing: carrierName))")
         print("Free Storage: \(freeSpace / (1024 * 1024)) MB")
         print("Battery Health: \(batteryHealth)%")
-        print("Battery Level: \(batteryLevel.rawValue)")
+//        print("Battery Level: \(batteryLevel.rawValue)")
 //        print("Camera MegaPixel: \(cameraMegaPixel) MP")
         print("Camera Aperture: \(String(describing: cameraAperture))")
         print("Processor: \(cpuInfo)")
@@ -101,10 +98,11 @@ class InfoViewController: UIViewController {
         carrierNameLabel.text = "Carrier Name: \(String(describing: carrierName))"
         freestorageLabel.text = "Free Storage: \(freeSpace / (1024 * 1024)) MB"
         batteryhealthLabel.text = "Battery Health: \(batteryHealth)%"
-        batterylevelLabel.text = "Battery Level: \(batteryLevel.rawValue)"
+        batterylevelLabel.text = "Battery Level: \(batteryPercentage)%"
         cameraapertureLabel.text = "Camera Aperture: \(String(describing: cameraAperture))"
         processorLabel.text = "Processor: \(cpuInfo)"
         gpuinformationLabel.text = "GPU Information: \(gpuInfo)"
+        
     }
     
     func setupLabels() {
@@ -135,6 +133,12 @@ class InfoViewController: UIViewController {
 
             previousLabel = label
         }
+    }
+    
+    func updateBatteryLevelLabel() {
+        
+
+        
     }
 
 }
