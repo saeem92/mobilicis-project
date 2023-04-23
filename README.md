@@ -32,3 +32,14 @@ Mobilicis is a device information app that allows you to get your device followi
   <img src="https://user-images.githubusercontent.com/93969890/233812713-ea72f4f4-a41f-4ae1-87f3-f106262435e3.png" width="45%">
    <img src="https://user-images.githubusercontent.com/93969890/233812735-89175493-c174-4f03-8619-e692f5184dbd.png" width="45%">
 </p>
+
+
+
+
+### Tools & Skills Used for this Project
+* Swift & UIKit
+* Xcode & iOS simulators
+* Both Storyboarding and Programmatic UI is used to build the UI of the app.
+* Devicekit library to display device information
+* Different apple libraries like system configuration, coretelephony and coreservices are used inside the app.
+* Debugging & performance optimization
