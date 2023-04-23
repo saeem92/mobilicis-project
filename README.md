@@ -2,6 +2,7 @@
 Mobilicis is a device information App which displays users device information, The app is built with Swift & UIKIT for both iphone and ipad.
 
 Mobilicis is a device information app that allows you to get your device following information: 
+<br/>
 ●	Model Name & Model Number
 ●	iOS Version
 ●	Device’s Serial Number
