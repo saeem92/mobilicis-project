@@ -1,6 +1,18 @@
 # mobilicis-project-iOS
 Mobilicis is a device information App which displays users device information, The app is built with Swift & UIKIT for both iphone and ipad.
 
+Mobilicis is a device information app that allows you to get your device following information: 
+●	Model Name & Model Number
+●	iOS Version
+●	Device’s Serial Number
+●	Storage
+●	Battery Health (Maximum Capacity)
+●	Battery Level (Current charging level)
+●	Camera MegaPixel
+●	Camera Aperture
+●	Processor (CPU) Information
+●	GPU Information
+●	IMEI
 
 <p align="center">
 
